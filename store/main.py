@@ -3,6 +3,11 @@ from fastapi import FastAPI
 from store.core.config import settings
 from store.routers import api_router
 
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"message": "Hello, World!"}
 
 class App(FastAPI):
     def __init__(self, *args, **kwargs) -> None:
